@@ -35,6 +35,10 @@
    
 }
 
+html {
+   height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -54,11 +58,14 @@
 }
 
 body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
    font-family: "Barlow", "Arila", "Fraunces", sans-serif;
    font-size: 16px;
    line-height: 1.5;
-   margin: 0;
-   padding: 0;
 }
 
 img {
@@ -69,6 +76,10 @@ li,
 a {
    list-style: none;
    text-decoration: none; 
+}
+
+.main {
+   flex-grow: 1;
 }
 
 .container {
@@ -89,21 +100,21 @@ a {
    margin-left: auto;
 }
 
-.nav-list {
+.nav__list {
    display: flex;
    align-items: center;
 }
 
-.nav-list {
+.nav__list {
    margin: 0;
    padding: 0;
 }
 
-.list-item+.list-item {
+.nav__item+.nav__item {
    margin-left: 33px;
 }
 
-.item-link {
+.nav__link {
    font-family: 'Barlow';
    font-weight: bold;
    font-size: 12px;
@@ -113,9 +124,14 @@ a {
    color: #83888F;
 }
 
-.item-link:hover {
+.nav__link:hover {
    color: #333D4B;
 }
+
+.nav__link--active {
+	color: #333d4b;
+}
+
 .hero .container {
    width: 1280px;
    height: 600px;
@@ -125,7 +141,7 @@ a {
    background-image: url(../img/container-img.png);
 }
 
-.heading {
+.hero__heading {
    width: 493px;
    margin-top: 0;
    margin-bottom: 32px;
@@ -136,7 +152,7 @@ a {
    color: #FEFCF7;
 }
 
-.coffee-text {
+.hero__paragraph {
    width: 445px;
    margin-top: 0;
    margin-bottom: 56px;
@@ -148,13 +164,51 @@ a {
 }
 
 
-.coffee-btn {
-   padding: 16px 31px;
-   font-family: 'Fraunces';
-   font-weight: 900;
-   font-size: 18px;
-   line-height: 25px;
-   color: #FEFCF7;
-   background: #66D2CF;
-   border-radius: 6px;
+.section-link {
+	width: 217px;
+	display: block;
+	padding: 15px;
+	text-align: center;
+	font-weight: 900;
+	font-size: 18px;
+	line-height: 25px;
+	color: #fefcf7;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	background: #0e8784;
+	border-radius: 6px;
+	transition: background-color 0.2s ease;
+}
+
+.section-link:hover {
+	background-color: #66d2cf;
+}
+
+/* Footer */
+.footer .container {
+	display: flex;
+	padding: 47px 85px;
+	background-color: #2c343e;
+}
+
+.footer .nav {
+	margin-left: 103px;
+}
+
+.footer .nav__link:hover {
+	color: #fff;
+}
+
+.nav__link--active-white {
+	color: #fff;
+}
+
+.footer__link {
+   margin-left: auto;
+}
+
+.link__icon + .link__icon {
+   margin-left: 24px;
 }
